@@ -20,7 +20,7 @@ function getBatteryLevel(addr) {
 async function mapEventsToVehicleActions(eventEmitter) {
   interfaces.leftMotor = await leftMotor();
   interfaces.rightMotor = await rightMotor();
-  interfaces.batteryPin = await.batteryPin();
+  interfaces.batteryPin = await batteryPin();
 
   eventEmitter.on('drive', setDriveSpeed);
   eventEmitter.on('battery', getBatteryLevel);
