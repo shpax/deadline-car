@@ -6,7 +6,7 @@ const messageListener = events => (msg, rinfo) => {
     if (message.battery) return events.emit('battery', rinfo.address);
     console.log('skipped', message);
   } catch (e) {
-    console.log("json parse error", e);
+    console.log(e);
   }
 };
 

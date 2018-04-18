@@ -5,12 +5,12 @@ function setDriveSpeed(command) {
 
   console.log('speed change', command);
 
-  leftMotor[lf ? 'forward' : 'reverse'](ls);
-  rightMotor[rf ? 'forward' : 'reverse'](rs);
+  leftMotor()[lf ? 'forward' : 'reverse'](ls);
+  rightMotor()[rf ? 'forward' : 'reverse'](rs);
 }
 
 function getBatteryLevel(addr) {
-  batteryPin.query(val => {
+  batteryPin().query(val => {
     console.log('batt', val, addr);
   })
 }
