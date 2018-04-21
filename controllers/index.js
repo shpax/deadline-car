@@ -1,4 +1,5 @@
 const { leftMotor, rightMotor, batteryPin } = require('../models/vehicle');
+const { sendObj } = require('../models/udpClient');
 
 const interfaces = {};
 
@@ -11,9 +12,9 @@ function setDriveSpeed(command) {
   interfaces.rightMotor[rf ? 'forward' : 'reverse'](rs);
 }
 
-function getBatteryLevel(addr) {
-  interfaces.batteryPin.query(val => {
-    console.log('batt', val, addr);
+function getBatteryLevel(host, port) {
+  interfaces.batteryPin.query(value => {
+    sendObj(host, port, { battery: true, value });
   })
 }
 
