@@ -16,7 +16,7 @@ function getBatteryLevel(host, port) {
   interfaces.batteryPin.query(({ value }) => {
     sendObj(host, port, { battery: true, value });
 
-    console.log('battery value', value);
+    console.log('battery value', value, 'from', host, port);
   })
 }
 
